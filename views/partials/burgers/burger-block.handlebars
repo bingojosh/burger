@@ -1,0 +1,11 @@
+<div class="row w-100">
+	<div class="col my-2">
+		<h4 class="text-muted">{{burger_name}}</h4>
+	</div>
+{{#if devoured}}
+{{else}}
+	<div class="col">
+			<button class="btn btn-danger devour" data-id="{{this.id}}" data-devoured="{{devoured}}">DEVOUR</button>
+	</div>
+{{/if}}
+</div>

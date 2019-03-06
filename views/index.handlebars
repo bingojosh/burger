@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col mr-3"></div>
+    <div class="col ml-5">
+      <img class="img-thumbnail" src="assets/img/burger.jpg">
+      <h1 class="title">Eat Da Burger</h1>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2 class="menu">Order Up</h2>
+      <div class="row">
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="float-right mr-5">
+        <h2 class="devoured-list">Just dishes now</h2>
+
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="burg" name="name">
+        </div>
+
+        <button type="submit">Order Up!</button>
+      </form>
+    </div>
+  </div>
+</div>
